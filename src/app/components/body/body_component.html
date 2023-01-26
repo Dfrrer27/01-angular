@@ -1,0 +1,32 @@
+<div class="row">
+
+    <div class="col">
+        <h1>*ngIf</h1>
+        <hr>
+        <!--con el comando "ngIf" destruye el blopque html que quieras, para luego llamarla par que aparezca-->
+        <div *ngIf="mostrar" class="card text-bg-dark mb-3" style="width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title">{{frase.autor}}</h5>
+              <p class="card-text">{{frase.mensaje}}</p>
+            </div>
+        </div>
+
+        <!--si le dan "click al boton mostrar = devolvera lo contrario de mostrar "!mostrar""-->
+        <button (click)="mostrar = !mostrar" class="btn btn-outline-dark" style="width: 100%;">
+            Mostrar/Ocultar
+        </button>
+    </div>
+
+    <div class="col">
+        <h1>*ngFor</h1>
+        <hr>
+        <ul class="list-group">
+            <li *ngFor="let list of cursos; let i = index" class="list-group-item">
+                {{i + 1}} - {{list}}
+                <!--list es la referencia a cada uno de los elementos que se encuentran en el arreglo, por cada elemento que exista en el arreglo-->
+                <!--"i" es la referencia al index, que el index se ocupa de enumerar las variables desde el cero-->
+            </li>
+        </ul>
+    </div>
+
+</div>      
